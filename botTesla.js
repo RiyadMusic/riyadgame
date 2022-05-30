@@ -15,7 +15,7 @@ const ID_BOT = process.env.ID_BOT || '';
 const config = require("./config")
 const db = require("./veritabani/db")
 const fs = require("fs")
-const {randomResim, Degisken, ArtiEksi, HusnuEhedov, kullaniciProfil} = require("./eklenti")
+const {randomResim, Degisken, ArtiEksi, thagiyevvvv, kullaniciProfil} = require("./eklenti")
 const telegram = new Telegram(process.env.TOKEN)
 const bot = new Telegraf(process.env.TOKEN)
 const path = require("path")
@@ -235,7 +235,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 			if (!top.every(member => member.answer === null)) {
 				ctx.replyWithMarkdown(
 					Degisken(`
-						✅ Fotoğraftaki Kişi: *${rightAnswer} ${HusnuEhedov(rightAnswer, "yaşında", "yaşında", "yaşında")}*\n*⭐️Puan Kazananlar:*
+						✅ Fotoğraftaki Kişi: *${rightAnswer} ${thagiyevvvv(rightAnswer, "yaşında", "yaşında", "yaşında")}*\n*⭐️Puan Kazananlar:*
 
 						${top.sort((a, b) => b.addScore - a.addScore).map((member, index) => `${["🥇","🎖","🏅"][index] || "🔸"} ${index + 1}. *${member.firstName}*: ${ArtiEksi(member.addScore)}`).join("\n")}
 					`),
@@ -433,7 +433,7 @@ bot.start(async (ctx) => {
         reply_markup:{
             inline_keyboard:[
                 [{text:'Botu Grupa Ekle ✅', url:`https://t.me/${process.env.BOT_ISMI}?startgroup=true`}],
-                [{text:'Resmi Kanalımız 📣', url:`t.me/teslagametr`},{text:'VİP Gruplar 💎', callback_data:'vip'}]
+                [{text:'Resmi Kanalımız 📣', url:`t.me/riyaddblog`},{text:'VİP Gruplar 💎', callback_data:'vip'}]
             ]
         }
     })
